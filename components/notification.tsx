@@ -3,6 +3,7 @@ import { Text, View, Button, Platform } from 'react-native';
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 import Constants from 'expo-constants';
+import PermissionsButton from "./bg-task"
 
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
@@ -62,6 +63,7 @@ export default function App() {
                 <Text>Body: {notification && notification.request.content.body}</Text>
                 <Text>Data: {notification && JSON.stringify(notification.request.content.data)}</Text>
             </View>
+            <PermissionsButton />
             <Button
                 title="Press to schedule a notification"
                 onPress={async () => {
